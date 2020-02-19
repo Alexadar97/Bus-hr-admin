@@ -1,0 +1,83 @@
+body{
+  background: #F9F9FC !important;
+  padding: 0px !important;
+}
+.nopadding{
+  padding:0px !important;
+}
+.text-center{
+  text-align: center !important;
+}
+.text-right{
+  text-align: right !important;
+}
+.text-left{
+  text-align: left !important;
+}
+.page {
+  /* position: relative; */
+  /* min-height: calc(100% - 44px); */
+
+  background: #F9F9FC !important;
+  padding-top: 10%;
+  margin-left: 0px !important;
+}
+.modal-header .close {
+   margin-top: 0px !important;
+  order: 2;
+  font-size: 40px;
+
+}
+.modal-header{
+  border-bottom: 2px solid #D0D2D7 !important;
+}
+.modal-header .close {
+  padding: 15px;
+  margin: -26px -15px -15px auto !important;
+}
+.pull-right{
+  float: right;
+}
+.questioneditor .ngx-editor-textarea {
+  height: 150px !important;
+  min-height: 0px;
+  margin-bottom: 5% !important;
+}
+.explainationeditor .ngx-editor-textarea {
+  height: 430px !important;
+  min-height: 0px;
+  margin-bottom: 5% !important;
+}
+.explainationeditor .ngx-editor-grippie{
+  display: none !important;
+}
+.questioneditor .ngx-editor-grippie{
+  display: none !important;
+}
+.ngx-pagination {
+  float: right !important;
+  margin-top:2%;
+}
+.nopadding{
+  padding:0;
+}
+.modal-backdrop.show {
+  opacity: 0 !important;
+}
+#coursepage {
+  padding-top: 62px;
+}
+
+.pointer{
+  cursor: pointer !important;
+}
+.textcenter{
+  text-align: center !important;
+}
+input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+}
+.modal-backdrop.in {
+  filter: alpha(opacity=50);
+  opacity: .5 !important;
+}

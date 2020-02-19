@@ -1,0 +1,102 @@
+.courselistpage{
+    background: #FFFFFF;
+    box-shadow: 0 0 11px 0 rgba(0,0,0,0.13);
+    border-radius: 3px;
+    padding-top: 1%;
+}
+.coursetable thead th {
+    color: #8D92AC;
+    font-size: 17px;
+    font-family: roboto;
+    padding-top: 1%;
+}
+.coursetable tbody td {
+    color: #65687C;
+    font-size: 15px;
+    font-family: roboto;
+    font-weight: 600;
+    padding-top: 1%;
+    padding-bottom: 2%;
+}
+.assesmenttext {
+    color: #555465;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: roboto;
+}
+.btn-addnew {
+    background: #1E4A7E;
+    border-radius: 3px;
+    font-family: roboto;
+    padding: 0;
+    font-size: 14px;
+    padding: 3px 10px 3px 10px;
+}
+.btn-addnew:hover {
+    box-shadow: 0 0 3px #1E4A7E;
+}
+.btn-modal{
+    background: #1E4A7E;
+
+    font-family: hind;
+    padding: 3px;
+    font-size:12px;
+}
+.btn-modalsubmit{
+    background: #1E4A7E;
+    border-radius: 3px;
+    font-family: roboto;
+    font-size: 16px;
+    color: #ffffff;
+}
+.courseadd{
+    border-bottom: 2px solid #EBEDF2;
+}
+.uploadfile {
+    border: 1px solid #979797;
+    border-radius:3px;
+    padding-top: 5px;
+}
+.form-control{
+    border-color:#979797;
+}
+.uploadfile label {
+    font-family: hind;
+    color: #303030;
+    font-weight: 500;
+}
+.modal-body label {
+    font-family: roboto;
+    color: #636363;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.modal-footer {
+    justify-content: center !important;
+}
+.upload-link {
+  border: 1px solid;
+  padding: 0px 8px;
+  margin-left: 8px;
+  background: #1E4A7E;
+  color: #fff !important;
+}
+  .btn-addnew{
+    font-size: 12px;
+}
+.assesmenttext {
+
+  font-size: 14px;
+
+}
+.coursetable thead th {
+ font-size: 14px;
+}
+.coursetable tbody td {
+
+  font-size: 12px;
+}
+ 
+
+

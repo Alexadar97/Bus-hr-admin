@@ -1,0 +1,61 @@
+<div id="coursepage" class=" courselist">
+  <div class="container courselistpage">
+    <div class="row courseadd pb-5">
+      <div class="col-md-3 pl-4">
+        <h4 class="assesmenttext "> Introduction to Bus Development</h4>
+      </div>
+      <div class="col-md-6">
+        <form class="" style="float:right">
+          <input type="text" placeholder="Search.." name="search2">
+          <button type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
+      </div>
+      <div class="col-md-3 pr-4">
+        <button type="button" class="btn btn-primary btn-addnew pull-right" routerLink="../">
+      Back</button>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-12 coursetable table-responsive text-left">
+        <table class="table-hover" style="width:100%">
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Questions Name</th>
+              <th>Published Date</th>
+              <th>Status</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let Eachdata of courselist |paginate:{ itemsPerPage: 5, currentPage: p1,id: 'two'}; let i=index">
+              <td> {{(p1- 1) * 5 + i+1}}</td>
+              <td>{{Eachdata.name}}</td>
+              <td>{{Eachdata.PublishedDate}}</td>
+              <td>{{Eachdata.Status}}</td>
+              <td >
+                <button type="button" class="btn btn-primary btn-addnew " (click)="navigate(i,'/dashboard/coursequestion')">&nbsp;Edit</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+        <pagination-controls (pageChange)="p1 = $event" #api id="two">
+        </pagination-controls>
+      </div>
+    </div>
+    <br>
+    <br>
+  </div>
+
+</div>
+
+

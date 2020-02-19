@@ -1,0 +1,183 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "lgate": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/lgate",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/bootstrap-extend.min.css",
+              "src/assets/css/site.min.css",
+              "src/assets/css/skintools.min.css",
+              "src/assets/css/animsition.min.css",
+              "src/assets/css/asScrollable.min.css",
+              "src/assets/css/switchery.min.css",
+              "src/assets/css/introjs.min.css",
+              "src/assets/css/slidePanel.min.css",
+              "src/assets/css/waves.min.css",
+              "src/assets/css/jquery-jvectormap.min.css",
+              "src/assets/css/v1.min.css",
+              "src/assets/css/material-design.min.css",
+              "src/assets/css/dropify.css"       
+            ],
+            "scripts": [
+              "src/assets/js/babel-external-helpers.js",
+              "src/assets/js/jquery.min.js",
+              "src/assets/js/popper.min.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/animsition.min.js",
+              "src/assets/js/jquery.mousewheel.min.js",
+              "src/assets/js/jquery-asScrollbar.min.js",
+              "src/assets/js/jquery-asScrollable.min.js",
+              "src/assets/js/jquery-asHoverScroll.min.js",
+              "src/assets/js/waves.min.js",
+              "src/assets/js/switchery.min.js",
+              "src/assets/js/intro.min.js",
+              "src/assets/js/screenfull.min.js",
+              "src/assets/js/jquery-slidePanel.min.js",
+              "src/assets/js/jquery-jvectormap.min.js",
+              "src/assets/js/jquery-jvectormap-world-mill-en.js",
+              "src/assets/js/jquery.matchHeight-min.js",
+              "src/assets/js/jquery.peity.min.js",
+              "src/assets/js/State.min.js",
+              "src/assets/js/Component.min.js",
+              "src/assets/js/Plugin.min.js",
+              "src/assets/js/Base.min.js",
+              "src/assets/js/dropify.min.js",
+              "src/assets/js/plugin-dropify.min.js",
+              "src/assets/js/Config.min.js",
+              "src/assets/js/Menubar.min.js",
+              "src/assets/js/Sidebar.min.js",
+              "src/assets/js/PageAside.min.js",
+              "src/assets/js/menu.min.js",
+              "src/assets/js/colors.min.js",
+              "src/assets/js/tour.min.js",
+              "src/assets/js/Site.min.js",
+              "src/assets/js/asscrollable.min.js",
+              "src/assets/js/slidepanel.min.js",
+              "src/assets/js/switchery.min.js",
+              "src/assets/js/matchheight.min.js",
+              "src/assets/js/jvectormap.min.js",
+              "src/assets/js/peity.min.js",
+              "src/assets/js/v1.min.js",
+              "node_modules/bootstrap-notify/bootstrap-notify.js"
+              
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "lgate:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "lgate:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "lgate:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.spec.json",
+            "karmaConfig": "src/karma.conf.js",
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "lgate-e2e": {
+      "root": "e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "lgate:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "lgate:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "lgate"
+}

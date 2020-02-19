@@ -1,0 +1,126 @@
+<div id="coursepage" class=" courselist">
+  <div class="container courselistpage">
+    <div class="row courseadd pb-5">
+      <div class="col-md-3 pl-4">
+        <h4 class="assesmenttext "> Assessments</h4>
+      </div>
+      <div class="col-md-6">
+        <form class="" style="float:right">
+          <input type="text" placeholder="Search.." name="search2">
+          <button type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
+      </div>
+      <div class="col-md-3 pr-4">
+        <button type="button" class="btn btn-primary btn-addnew pull-right" (click)="addassesment()">
+          <img src="assets/images/add-file.png" style="width:20%"> &nbsp;&nbsp;Add New</button>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-12 coursetable table-responsive text-left">
+        <table class="table-hover" style="width:100%">
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Name</th>
+              <th >Questions Count</th>
+              <th >View Question</th>
+              <th>Published Date</th>
+              <th>Status</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let Eachdata of courselist |paginate:{ itemsPerPage: 5, currentPage: p1,id: 'two'}; let i=index">
+              <td> {{(p1- 1) * 5 + i+1}}</td>
+              <td>{{Eachdata.name}}</td>
+              <td style="padding-left: 10px;">{{Eachdata.QuestionsCount}}</td>
+              <td >
+                <button type="button" class="btn btn-primary btn-addnew " (click)="navigate(i,'/dashboard/questionlist')">&nbsp;View</button>
+              </td>
+              <td>{{Eachdata.PublishedDate}}</td>
+              <td>{{Eachdata.Status}}</td>
+              <td >
+                <button type="button" class="btn btn-primary btn-addnew " (click)="navigate(i,'/dashboard/coursequestion')">&nbsp;Edit</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+        <pagination-controls (pageChange)="p1 = $event" #api id="two">
+        </pagination-controls>
+      </div>
+    </div>
+    <br>
+    <br>
+  </div>
+
+</div>
+
+
+<div class="modal fade" id="addviewassesment" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">{{modalname}}</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="Courseform">
+          <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+              <label>Title of the exam</label>
+              <input type="text" class="form-control" formControlName="examtitle">
+              <small class="text-danger" *ngIf="!Courseform.controls.examtitle.valid && Courseform.controls.examtitle.touched">Title of the exam is invalid</small>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+              <label>Banner Image</label>
+              <div class="uploadfile">
+                <div class="row">
+                  <div class="col-6 col-sm-6 col-md-12 col-lg-12">
+                    <label for="uploadFilePartidl" class="pl-2 upload-link pointer" style="float:left;">
+                      Choose Image </label>
+
+                    {{Uploadfilename}}
+
+                    <input type="file" formControlName="uploadimage" id="uploadFilePartidl" #uploadFilePartid style="display: none" (change)="uploadfile($event)"><br>
+                   </div>
+                  </div>
+              </div>
+              <small class="text-danger" *ngIf="!Courseform.controls.uploadimage.valid && Courseform.controls.uploadimage.touched">Image is invalid</small>
+            </div>
+          </div>
+          <div class="row pt-4 ">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+              <label>Level</label><br>
+              <select class="form-control-select" formControlName="levelform">
+                <option disabled value="null">Select Level</option>
+                <option value="select1">Level 1</option>
+                <option value="select2">Level 2</option>
+                <option value="select3">Level 3</option>
+              </select><br>
+              <small class="text-danger" *ngIf="!Courseform.controls.levelform.valid && Courseform.controls.levelform.touched">Level is invalid</small>
+ </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+              <label>Total Number of Questions</label>
+              <input type="number" class="form-control" formControlName="totalnumber">
+              <small class="text-danger" *ngIf="!Courseform.controls.totalnumber.valid && Courseform.controls.totalnumber.touched">Total Number of Questions is invalid</small>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer pt-4 ">
+        <button type="button" class="btn btn-md btn-modalsubmit" (click)="addclick();">Continue</button>
+
+      </div>
+    </div>
+  </div>
+</div>

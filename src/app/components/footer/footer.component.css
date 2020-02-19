@@ -1,0 +1,32 @@
+footer{
+    background: #606164 !important;
+    background-repeat: no-repeat !important;
+    cursor: pointer;
+    background-position: center !important;
+    height: 17px;
+    position: fixed;
+    left: 0px;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    z-index: 1499;
+    font-size: 12px;
+    padding-left: 35px !important;
+}
+.main-footer{
+    background-image: url(/../../assets/images/innerpagebotbg1.jpg) !important;
+    background-repeat: no-repeat !important;
+    cursor: pointer;
+    height: 35px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: left;
+}
+a.footercontent {
+    color: #fff;
+    font-size: 14px;
+    position: absolute;
+    top: 15%;
+}

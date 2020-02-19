@@ -1,0 +1,226 @@
+.innerhead {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    min-width: 512px;
+  }
+img.innerpgtop {
+  width: 100%;
+  min-height: 50px;
+  height: 50px;
+}
+img.innerpglogo {
+    position: absolute;
+    margin: 11px auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    max-width: 230px;
+    min-width: 173px;
+}
+.dropbtn{
+  position: absolute;
+  left: 14%;
+  top: 13px;
+  padding: 4px;
+}
+
+select#sel {
+  height: 32px;
+  border: none;
+  border-radius: inherit;
+  background: #434343;
+  color: #fff;
+  /* padding-top: -2px; */
+  font-family: "Roboto-Regular", sans-serif;
+font-size: 15px;
+letter-spacing: 0;
+}
+
+.dropdown-content a {
+
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  color: #fff;
+  font-size: 12px;
+  font-family: "Roboto-Regular", sans-serif;
+  letter-spacing: 0;
+
+}
+.dropdown-content a:hover {background-color:#212529 ;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color:#434343;}
+
+
+.setting-icon {
+  position: absolute;
+  right: 11px;
+  display: inline-block;
+  cursor: pointer;
+  top: 10px;
+  background: #434343;
+  padding-top: 3px;
+  padding-bottom: 4px;
+  padding-right: 2px;
+  padding-left: 6px;
+  border-radius: 4px;
+}
+
+.setting-icon:hover .settings-content {
+  display: block;
+}
+.settings-content {
+  display: none;
+  position: absolute;
+  background: #c1c1c1;
+  min-width: 90px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  height: auto;
+  margin-left: -45px;
+  padding: 4px 0px;
+  border-radius: 4px;
+  list-style: none;
+}
+.setting-text:hover{
+background: #434343;
+color: #fff;
+font-family: Roboto;
+}
+.setting-text a:hover{
+
+  color: #fff;
+
+  }
+.slash{
+   font-size: 13px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+a.text-center, a.text-center.logoff {
+  color: #000;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0px 8px;
+}
+/* a.text-center.logoff {
+  font-size: 12px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+} */
+
+.logoutbutton{
+  position: absolute;
+    right: 142px;
+    display: inline-block;
+    cursor: pointer;
+    top: 3px;
+    background: #434343;
+    color: #fff;
+    padding-top: 3px;
+    padding-bottom: 6px;
+    padding-right: 8px;
+    padding-left: 8px;
+    border-radius: 6px;
+    display:none;
+}
+
+.innerhead1 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 60px;
+    height: 70px;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    min-width: 512px;
+    background: #FFFFFF;
+    box-shadow: 0 1px 7px 0 rgba(0,0,0,0.24);
+}
+.innerhead2 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50px;
+    height: 70px;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    min-width: 512px;
+    background: #c1c1c1;
+}
+.innerheadbtn{
+    background: #F9F9FC;
+    border: 1px solid #8D92AC;
+    border-radius: 3px;
+    color: #494959;
+    font-family: roboto;
+}
+.innerheadbtn:hover{
+  background: #494959;
+  color: #fff;
+  border:none;
+  box-shadow: 0 0 3px #494959;
+}
+/* media query */
+@media only screen and (max-width:667px){
+ .setting-icon {
+display: none;
+  }
+  .homebutton {
+    display: none;
+      }
+      .logoutbutton{
+        display: inline;
+        right: 2px;;
+      }
+}
+.logoutbutton{
+  position: absolute;
+    right: 142px;
+    display: inline-block;
+    cursor: pointer;
+    top: 3px;
+    background: #434343;
+    color: #fff;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 8px;
+    padding-left: 8px;
+    border-radius: 6px;
+    display:none;
+}
+/* media query */
+@media only screen and (max-width:667px){
+ .setting-icon {
+display: none;
+  }
+.innerheadbtn{
+  position: relative;
+  right: 54px;
+}
+
+
+      .logoutbutton{
+        display: inline;
+        right: 10px;
+        top: 10px;
+      }
+      img.innerpglogo {
+        position: absolute !important;
+        right: 64% !important;
+        bottom: 23px !important;
+    }
+}

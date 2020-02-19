@@ -1,0 +1,286 @@
+<form [formGroup]="coursequestion">
+  <div id="coursepage" class=" courselist">
+    <div class="container courselistpage">
+      <div class="row courseadd">
+        <div class="col-md-6" style="padding-bottom: 14px;">
+          <h4>Introduction To Bus Development</h4>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="buttons" style="float: right;">
+            <button type="button" class="btn btn-primary btn-sm  btn-draft mx-5" (click)="save('draft')">SAVE
+              DRAFT</button>
+            <button type="button" class="btn btn-primary btn-sm btn-publish" (click)="save('publish')">PUBLISH</button>
+          </div>
+        </div>
+      </div>
+      <div class="row questionsetup">
+        <div class="col-md-6">
+          <h4>Question 1 : </h4>
+          <div class="questioneditor">
+            <app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true" formControlName="question">
+            </app-ngx-editor>
+            <small class="text-danger"
+              *ngIf="!coursequestion.controls.question.valid && coursequestion.controls.question.touched">Question is
+              invalid</small>
+            <div class="checkanswer ">
+              <label for="multiplecheck" class="pointer">Multiple Answer&nbsp;&nbsp;
+                <input type="checkbox" id="multiplecheck" formControlName="multiple">
+              </label>
+            </div>
+
+            <div class="questionanswer mt-5 py-3" *ngIf="coursequestion.value.multiple == true">
+              <div class="row" style="margin-top: -20px;">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="panel-footer">
+                    <div class="funkyradio">
+                      <div class="funkyradio-success">
+                        <input type="checkbox" name="select" id="checkbox1" formControlName="select"/>
+                        <label for="checkbox1">
+                          <input type="text" class="form-control radio-inputbox" id="usr" formControlName="mlanswera">
+                          <span class="option">A</span>
+                        </label>
+                        <small class="text-danger"
+                          *ngIf="!coursequestion.controls.mlanswera.valid && coursequestion.controls.mlanswera.touched">A
+                          is
+                          invalid</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row" style="margin-top: -25px;">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="panel-footer">
+                    <div class="funkyradio">
+                      <div class="funkyradio-success">
+                        <input type="checkbox" name="select" id="checkbox2" formControlName="select"/>
+                        <label for="checkbox2">
+                          <input type="text" class="form-control radio-inputbox" id="usr" formControlName="mlanswerb">
+                          <span class="option">B</span>
+                        </label>
+                        <small class="text-danger"
+                          *ngIf="!coursequestion.controls.mlanswerb.valid && coursequestion.controls.mlanswerb.touched">B
+                          is
+                          invalid</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row" style="margin-top: -25px;">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="panel-footer">
+                    <div class="funkyradio">
+                      <div class="funkyradio-success">
+                        <input type="checkbox" name="select" id="checkbox3" contenteditable="true" formControlName="select"/>
+                        <label for="checkbox3">
+                          <input type="text" class="form-control radio-inputbox" id="usr" formControlName="mlanswerc">
+                          <span class="option">C</span>
+                          <small class="text-danger"
+                            *ngIf="!coursequestion.controls.mlanswerc.valid && coursequestion.controls.mlanswerc.touched">C
+                            is
+                            invalid</small>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="row" style="margin-top: -25px;">
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="panel-footer">
+
+                    <div class="funkyradio">
+                      <div class="funkyradio-success">
+
+                        <input type="checkbox" name="select" id="checkbox4" contenteditable="true" formControlName="select"/>
+
+                        <label for="checkbox4">
+                          <input type="text" class="form-control radio-inputbox" id="usr" formControlName="mlanswerd">
+                          <span class="option">D</span>
+                        </label>
+                        <small class="text-danger"
+                          *ngIf="!coursequestion.controls.mlanswerd.valid && coursequestion.controls.mlanswerd.touched">D
+                          is
+                          invalid</small>
+                      </div>
+                      <small class="text-danger"
+                      *ngIf="!coursequestion.controls.select.valid && coursequestion.controls.select.touched">Select Box
+                      is
+                      invalid</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionanswer mt-5 py-3" *ngIf="coursequestion.value.multiple == false">
+              <div class="row" style="margin-top: -20px;">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="panel-footer">
+                    <div class="funkyradio">
+                      <div class="funkyradio-success">
+                        <input type="radio" value="A" name="selected" id="radio1"  formControlName="selected"/>
+                        <label for="radio1">
+                          <input type="text" class="form-control radio-inputbox" id="usr" formControlName="answersa">
+                          <span class="option">A</span>
+                        </label>
+                      </div>
+                      <small class="text-danger"
+                      *ngIf="!coursequestion.controls.answersa.valid && coursequestion.controls.answersa.touched">A
+                      is invalid</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row" style="margin-top: -25px;">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="panel-footer">
+                    <div class="funkyradio">
+                      <div class="funkyradio-success">
+                        <input type="radio" value="B" name="selected" id="radio2"  formControlName="selected"/>
+                        <label for="radio2">
+                          <input type="text" class="form-control radio-inputbox" id="usr" formControlName="answersb">
+                          <span class="option">B</span>
+                        </label>
+                      </div>
+                      <small class="text-danger"
+                        *ngIf="!coursequestion.controls.answersb.valid && coursequestion.controls.answersb.touched">B
+                        is invalid</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row" style="margin-top: -25px;">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="panel-footer">
+                    <div class="funkyradio">
+                      <div class="funkyradio-success">
+                        <input type="radio" value="C" name="selected" id="radio3" contenteditable="true"  formControlName="selected"/>
+                        <label for="radio3">
+                          <input type="text" class="form-control radio-inputbox" id="usr" formControlName="answersc">
+                          <span class="option">C</span>
+                        </label>
+                      </div>
+                      <small class="text-danger"
+                        *ngIf="!coursequestion.controls.answersc.valid && coursequestion.controls.answersc.touched">C
+                        is invalid</small>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="row" style="margin-top: -25px;">
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="panel-footer">
+
+                    <div class="funkyradio">
+                      <div class="funkyradio-success">
+
+                        <input type="radio" value="D" name="selected" id="radio4" contenteditable="true"  formControlName="selected"/>
+
+                        <label for="radio4">
+                          <input type="text" class="form-control radio-inputbox" id="usr" formControlName="answersd">
+                          <span class="option">D</span>
+                        </label>
+                      </div>
+                      <small class="text-danger"
+                        *ngIf="!coursequestion.controls.answersd.valid && coursequestion.controls.answersd.touched">D
+                        is invalid</small>
+                    </div>
+                    <small class="text-danger"
+                      *ngIf="!coursequestion.controls.selected.valid && coursequestion.controls.selected.touched">Select Box
+                      is
+                      invalid</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h4>Explaination</h4>
+          <div class="explainationeditor">
+            <app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true" formControlName="explainaiton">
+            </app-ngx-editor>
+            <small class="text-danger"
+              *ngIf="!coursequestion.controls.explainaiton.valid && coursequestion.controls.explainaiton.touched">Explaination
+              is invalid</small>
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
+    <div class="container-fluid nopadding">
+      <div class="row footer-page py-5">
+        <div class="container">
+          <div class="row py-5">
+            <div class="col-md-6 pt-3">
+              <p>Question: &nbsp;&nbsp;&nbsp;
+                <span class="no-text" contenteditable="true" type="text">25</span>&nbsp;/100 &nbsp;&nbsp;&nbsp;
+                <span>
+                  <button class="btn btn-primary  btn-sm btn-go">Go</button>
+                </span>
+              </p>
+
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+              <div style="float: right;">
+                <button type="button" class="btn btn-primary  btn-sm btn-previous mx-4">
+                  <i class="fa fa-angle-double-left" style="font-size: 14px;"></i>&nbsp;&nbsp;&nbsp;Previous</button>
+
+
+                <button type="button" class="btn btn-primary btn-sm btn-next"
+                  (click)="nextclick()">Next&nbsp;&nbsp;&nbsp;
+                  <i class="fa fa-angle-double-right" style="font-size: 14px;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+</form>
+
+<div class="modal fade" id="draft" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Save Draft</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+          Are you sure want to save as draft?
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-primary" (click)="confirmsavedraft()">Yes</button>
+        <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="publish" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Publish</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+          Are you sure you want to publish?
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-primary" (click)="confirmpublish()">Yes</button>
+        <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">No</button>
+      </div>
+    </div>
+  </div>
+</div>
